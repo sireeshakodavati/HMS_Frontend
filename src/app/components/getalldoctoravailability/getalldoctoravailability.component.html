@@ -1,0 +1,44 @@
+<head>
+    <style>
+      table {
+        margin: 20px; /* You can adjust the value as needed */
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid black; /* Set black border for the table */
+      }
+  
+      th, td {
+        border: 1px solid black; /* Set black border for table cells */
+        text-align: left;
+        padding: 8px;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+  
+      th {
+        background-color: rgb(78, 63, 214);
+      }
+    </style>
+  </head>
+  
+<button  type="button" class="btn btn-primary"  (click)="getAll()" >Display DoctorAvailability Details</button>
+<br>
+<div class="container">
+    <table    class="table table-primary col-sm-5">
+    
+       <tr><th>SNO.</th><th>DOCTORAVAILABILITYID</th><th>DAYOFWEEK</th><th>STARTTIME</th><th>ENDTIME</th><th>DELETE</th><th>UPDATE</th></tr> 
+    <tr *ngFor="let p of doctoravailabilityList; index as i"><td>{{i+1}}</td> <td>{{p.doctorAvailabilityId}}</td><td>{{p.dayOfWeek}}</td><td>{{p.startTime}}</td><td>{{p.endTime}}</td>
+    
+          
+     <td><button type="button" class="btn btn-danger" style=background-color:red (click)="deleteById(p.doctorAvailabilityId)">Delete</button></td>
+      <td><button type="button" class="btn btn-danger" style=background-color:green (click)="update()">Update</button></td>
+
+    </tr>
+    
+    </table>
+    </div> 
+
+  
+    

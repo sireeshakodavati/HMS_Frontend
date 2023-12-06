@@ -1,0 +1,46 @@
+<!-- appointment.component.html -->
+
+<header class="bg-primary text-white text-center py-3">
+  <h1>Hospital Management System</h1>
+</header>
+
+<h1 style="text-align:center">Appointment Form</h1>
+
+<div class="container col-lg-4">
+  <form [formGroup]="appointmentForm" method="post" (ngSubmit)="addAppointment(appointmentForm.value)">
+      <div class="form-group">
+          <label for="appointmentId">Appointment ID</label>
+          <input type="number" class="form-control" formControlName="appointmentId">
+          <span style="color:red" *ngIf="isFieldInvalid('appointmentId')">Appointment ID is required</span>
+      </div>
+
+      <div class="form-group">
+          <label for="appointmentDate">Appointment Date</label>
+          <input type="text" class="form-control" formControlName="appointmentDate">
+          <span style="color:red" *ngIf="isFieldInvalid('appointmentDate')">Invalid date format. Use yyyy-MM-dd</span>
+      </div>
+
+      <div class="form-group">
+          <label for="appointmentTime">Appointment Time</label>
+          <input type="text" class="form-control" formControlName="appointmentTime">
+          <span style="color:red" *ngIf="isFieldInvalid('appointmentTime')">Invalid time format. Use hh:mm:ss AM/PM</span>
+      </div>
+
+      <div class="form-group">
+          <label for="status">Status</label>
+          <input type="text" class="form-control" formControlName="status">
+          <span style="color:red" *ngIf="isFieldInvalid('status')">Invalid status format</span>
+      </div>
+
+      <br>
+
+      <button type="submit" class="btn btn-primary" [disabled]="appointmentForm.invalid">Add Appointment</button>
+  </form>
+</div>
+
+<footer class="bg-primary text-center text-white fixed-bottom">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-white" href="https://hexaware.com/">Hexaware</a>
+  </div>
+</footer>

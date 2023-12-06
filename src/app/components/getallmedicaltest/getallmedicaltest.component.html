@@ -1,0 +1,55 @@
+
+<head>
+    <style>
+      table {
+        margin: 20px; /* You can adjust the value as needed */
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid black; /* Set black border for the table */
+      }
+  
+      th, td {
+        border: 1px solid black; /* Set black border for table cells */
+        text-align: left;
+        padding: 8px;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+  
+      th {
+        background-color: rgb(78, 63, 214);
+      }
+    </style>
+  </head>
+  <header class="bg-primary text-white text-center py-3">
+    <h1>Hospital Management System</h1>
+</header>
+
+<br>
+<br>
+    <button  type="button" class="btn btn-primary"  (click)="getAll()" >Display MedicalTest Details</button>
+    <br>
+    <div class="container">
+        <table    class="table table-primary col-sm-5">
+        
+           <tr><th>SNO.</th><th>TESTID</th><th>TESTNAME</th><th>DELETE</th><th>UPDATE</th></tr> 
+        <tr *ngFor="let p of medicaltestList; index as i"><td>{{i+1}}</td> <td>{{p.testId}}</td><td>{{p.testName}}</td>
+        
+    <td><button type="button" class="btn btn-danger" style=background-color:red  (click)="deleteById(p.testId)">Delete</button></td>
+<td><button type="button" class="btn btn-danger" style=background-color:green (click)="update()">Update</button></td>
+        </tr>
+        
+        </table>
+        </div>
+        <footer class="bg-primary text-center text-white fixed-bottom"> 
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+              © 2023 Copyright:
+              <a class="text-white" href="https://hexaware.com/">Hexaware</a>
+            </div>
+          </footer>
+          
+           
+    
+       

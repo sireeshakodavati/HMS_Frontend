@@ -1,0 +1,95 @@
+<!-- 
+<header class="bg-primary text-white text-center py-3">
+    <h1>Hospital Management System</h1>
+</header>
+  <br>
+  <h1 style="text-align:center">Doctor Availability Form</h1>
+  
+  <div class="container col-lg-4">
+    <form #formData="ngForm" method="post"  (ngSubmit)="addDoctorAvailability(doctoravailabilityForm.value)">
+      <div class="form-group">
+        <label for="doctorAvailabilityId">Doctor Availability ID</label>
+        <input type="number" class="form-control" name="doctorAvailabilityId" required #doctorAvailabilityId="ngModel" ngModel>
+        <span style="color:red" *ngIf="doctorAvailabilityId.touched && doctorAvailabilityId.invalid">Doctor Availability ID is required</span>
+      </div>
+  
+      <div class="form-group">
+        <label for="dayOfWeek">Day of Week</label>
+        <input type="text" class="form-control" name="dayOfWeek" required #dayOfWeek="ngModel" ngModel>
+        <span style="color:red" *ngIf="dayOfWeek.touched && dayOfWeek.invalid">Day of Week is required</span>
+      </div>
+  
+      <div class="form-group">
+        <label for="startTime">Start Time</label>
+        <input type="text" class="form-control" name="startTime" required #startTime="ngModel" ngModel>
+        <span style="color:red" *ngIf="startTime.touched && startTime.invalid">Start Time is required</span>
+      </div>
+  
+      <div class="form-group">
+        <label for="endTime">End Time</label>
+        <input type="text" class="form-control" name="endTime" required #endTime="ngModel" ngModel>
+        <span style="color:red" *ngIf="endTime.touched && endTime.invalid">End Time is required</span>
+      </div>
+       <br>
+      <button type="submit" class="btn btn-primary" [disabled]="formData.invalid">Add DoctorAvailability</button>
+    </form>
+  </div>
+  
+ 
+  <footer class="bg-primary text-center text-white fixed-bottom">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-white" href="https://hexaware.com/">Hexaware</a>
+    </div>
+  </footer> -->
+
+
+
+
+  <!-- doctoravailability.component.html -->
+
+  <header class="bg-primary text-white text-center py-3">
+    <h1>Hospital Management System</h1>
+</header>
+  
+<h1 style="text-align:center">Update Doctor Availability Form</h1>
+
+<div class="container col-lg-4">
+    <form [formGroup]="doctoravailabilityForm" method="post" (ngSubmit)="updateDoctorAvailability(doctoravailabilityForm.value)">
+        <div class="form-group">
+            <label for="doctorAvailabilityId">Doctor Availability ID</label>
+            <input type="number" class="form-control" formControlName="doctorAvailabilityId">
+            <span style="color:red" *ngIf="isFieldInvalid('doctorAvailabilityId')">Doctor Availability ID is required</span>
+        </div>
+
+        <div class="form-group">
+            <label for="dayOfWeek">Day of Week</label>
+            <input type="text" class="form-control" formControlName="dayOfWeek">
+            <span style="color:red" *ngIf="isFieldInvalid('dayOfWeek')">Invalid day of week</span>
+        </div>
+
+        <div class="form-group">
+            <label for="startTime">Start Time</label>
+            <input type="text" class="form-control" formControlName="startTime">
+            <span style="color:red" *ngIf="isFieldInvalid('startTime')">Invalid start time format</span>
+        </div>
+
+        <div class="form-group">
+            <label for="endTime">End Time</label>
+            <input type="text" class="form-control" formControlName="endTime">
+            <span style="color:red" *ngIf="isFieldInvalid('endTime')">Invalid end time format</span>
+        </div>
+
+        <br>
+
+        <button type="submit" class="btn btn-primary" [disabled]="doctoravailabilityForm.invalid">Update DoctorAvailability</button>
+        
+    </form>
+</div>
+
+<footer class="bg-primary text-center text-white fixed-bottom">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="https://hexaware.com/">Hexaware</a>
+    </div>
+</footer>

@@ -1,0 +1,44 @@
+<head>
+    <style>
+      table {
+        margin: 20px; /* You can adjust the value as needed */
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid black; /* Set black border for the table */
+      }
+  
+      th, td {
+        border: 1px solid black; /* Set black border for table cells */
+        text-align: left;
+        padding: 8px;
+      }
+  
+      th {
+        background-color: #f2f2f2;
+      }
+  
+      th {
+        background-color: rgb(78, 63, 214);
+      }
+    </style>
+  </head>
+  
+<button  type="button" class="btn btn-primary"  (click)="getAll()" >Display Patient Details</button>
+<br>
+<div class="container">
+    <table    class="table table-primary col-sm-5">
+    
+       <tr><th>SNO.</th><th>PATIENTID</th><th>USERNAME</th><th>PATIENTNAME</th><th>DATEOFBIRTH</th><th>GENDER</th><th>MOBILENUMBER</th><th>DISEASE</th><th>NATUREOFVISIT</th><th>PREFERREDDATE</th><th>PREFERREDTIME</th><th>DELETE</th><th>UPDATE</th></tr> 
+    <tr *ngFor="let p of patientList; index as i"><td>{{i+1}}</td> <td>{{p.patientId}}</td><td>{{p.userName}}</td><td>{{p.patientName}}</td><td>{{p.dateOfBirth}}</td><td>{{p.gender}}</td><td>{{p.mobileNumber}}</td><td>{{p.disease}}</td><td>{{p.natureOfVisit}}</td><td>{{p.preferredDate}}</td><td>{{p.preferredTime}}</td>
+    
+          
+     <td><button type="button" class="btn btn-danger" style=background-color:red (click)="deleteById(p.patientId)">Delete</button></td>
+      <td><button type="button" class="btn btn-danger" style=background-color:green (click)="update()">Update</button></td>
+
+    </tr>
+    
+    </table>
+    </div> 
+
+  
+    

@@ -1,0 +1,57 @@
+
+        
+        <header class="bg-primary text-white text-center py-3">
+          <h1>Hospital Management System</h1>
+         
+      </header> 
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button><br>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <img class="img-responsive " src="../assets/he.png"  width="100" height="100">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+         <a class="nav-link" href="#">Home</a>
+       </li>
+     
+         <li class="nav-item">
+          <a class="nav-link" routerLink="/aboutus">Aboutus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contactus">Contactus</a>
+        </li>
+      
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <div class="btn-group">
+          <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Login
+          
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: white; left: auto; right: 0;">
+            <a class="dropdown-item" routerLink="/adminlogin">Admin Login</a>
+            <a class="dropdown-item" routerLink="/doctorlogin">Doctor Login</a>
+            <a class="dropdown-item" routerLink="/patientlogin">Patient Login</a>
+          </div>
+        </button>
+        </div>
+      
+      </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+  <img class="img-responsive " src="../assets/logo.jpg"  width="1280" height="350">
+  <footer class="bg-primary text-center text-white fixed-bottom"> 
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+       © 2023 Copyright:
+       <a class="text-white" href="https://hexaware.com/">Hexaware</a>
+   </div>
+   
+   </footer>
+
+  
+  
+  
